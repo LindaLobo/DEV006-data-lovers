@@ -1,0 +1,65 @@
+header {
+    background-color: #0C5259;
+    color: #D96725;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+
+#menu {
+    background-color: #0C5259;
+    color: #D96725;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: x-large;
+}
+
+#pokebola-img > img {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-inline: auto;
+    background-color: #E8E3C5;
+}
+
+footer {
+    background-color: #0C5259;
+    color: #E8E3C5;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-small;
+    margin-top: 20px;
+}
+
+#tarjeta2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* div {
+  border: solid 1px;
+  margin: 15px;
+  justify-content: center;
+  text-align: center;
+} */
+
+.nombrePoke {
+  background: linear-gradient(yellow, red);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#tarjeta > div {
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px #888888;
+    text-align: center;
+}
