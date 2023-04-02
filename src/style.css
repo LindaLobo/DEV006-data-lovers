@@ -40,7 +40,7 @@ footer {
 }
 
 #tarjeta2 {
-  display: flex;
+  display: center;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -52,7 +52,7 @@ footer {
   text-align: center;
 } */
 
-.nombrePoke {
+.letrastarjetas {
   background: linear-gradient(yellow, red);
   -webkit-background-clip: text;
   color: transparent;
@@ -63,3 +63,19 @@ footer {
     box-shadow: 5px 10px 10px #888888;
     text-align: center;
 }
+
+
+.bloquePokemones{
+  box-shadow: 10px 10px rgba(0,0,0,0.5);
+  display: inline-block;
+  align-items: center; /* Alineación vertical */
+  justify-content: center; /* Alineación horizontal */
+  text-align: center; /* Alineación del texto */
+  background-color: aqua;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+

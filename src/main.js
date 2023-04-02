@@ -16,7 +16,8 @@ let getData = () => {   fetch(
       const contenedor = document.getElementById("tarjeta2");
       pokemon.forEach((pokemones) => {
         let bloque = document.createElement("div");
-        bloque.innerHTML = ` <h2 class="nombrePoke"> ${pokemones.name}</h2> <img src="${pokemones.img}"> `;
+        bloque.classList.add("bloquePokemones")
+        bloque.innerHTML = ` <h2 class="letrastarjetas"> ${pokemones.name}</h2> <img src="${pokemones.img}"> <h2 class="letrastarjetas">${pokemones.num} `;
         contenedor.appendChild(bloque);
       });
     })
