@@ -1,3 +1,8 @@
+body{
+  background-color: #E8E3C5;
+}
+
+
 header {
     background-color: #0C5259;
     color: #D96725;
@@ -19,13 +24,14 @@ header {
 }
 
 #pokebola-img > img {
+    margin-top: 20px;
     width: 500px;
     height: 500px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-inline: auto;
-    background-color: #E8E3C5;
+    
 }
 
 footer {
@@ -40,17 +46,10 @@ footer {
 }
 
 #tarjeta2 {
-  display: center;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-
-/* div {
-  border: solid 1px;
-  margin: 15px;
-  justify-content: center;
-  text-align: center;
-} */
 
 .letrastarjetas {
   background: linear-gradient(yellow, red);

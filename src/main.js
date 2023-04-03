@@ -34,6 +34,4 @@ botonPokemon.addEventListener("click", () => {
   document.getElementById("pokebola-img").setAttribute("style", "display:none");
   document.getElementById("tarjeta1").setAttribute("style", "display:none").innerHTML = getData()
 
-
-
 });
