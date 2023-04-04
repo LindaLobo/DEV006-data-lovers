@@ -23,6 +23,7 @@ header {
     font-size: x-large;
 }
 
+
 #pokebola-img > img {
     margin-top: 20px;
     width: 500px;
@@ -86,74 +87,79 @@ footer {
 
 
 .pokemon-fire{
- background-image: url(imagenes_Data_Lovers/fondos/fondo_fuego.jpg);
+ background-image: url(img/fondos/fondo_fuego.jpg);
 }
 
 .pokemon-grass{
-  background-image: url(imagenes_Data_Lovers/fondos/fondo\ planta.jpg);
+  background-image: url(img/fondos/fondo\ planta.jpg);
  }
  
 .pokemon-water{
-  background-image: url(imagenes_Data_Lovers/fondos/fondo\ agua.jpg);
+  background-image: url(img/fondos/fondo\ agua.jpg);
 }
 
 .pokemon-bug{
-  background-image: url(imagenes_Data_Lovers/fondos/tipo_bicho.jpg);
+  background-image: url(img/fondos/tipo_bicho.jpg);
 }
 
 .pokemon-poison{
-  background-image: url(imagenes_Data_Lovers/fondos/fondo_tipo_veneno.png);
+  background-image: url(img/fondos/fondo_tipo_veneno.png);
 }
 
 
 .pokemon-electric{
-  background-image: url(imagenes_Data_Lovers/fondos/fondo\ electricos.png)
+  background-image: url(img/fondos/fondo\ electricos.png)
  }
 
  .pokemon-rock{
-  background-image: url(imagenes_Data_Lovers/fondos/tipo_roca.png)
+  background-image: url(img/fondos/tipo_roca.png)
  }
 
  .pokemon-ghost{
-  background-image: url(imagenes_Data_Lovers/fondos/tipo_fantasmajpg.jpg)
+  background-image: url(img/fondos/tipo_fantasmajpg.jpg)
  }
 
  .pokemon-ice {
-  background-image: url(imagenes_Data_Lovers/fondos/tipo.icee.png);
+  background-image: url(img/fondos/tipo.icee.png);
  }
 
  .pokemon-psychic {
-  background-image: url(imagenes_Data_Lovers/fondos/tipo_psiquico.jpg);
+  background-image: url(img/fondos/tipo_psiquico.jpg);
  }
 
  .pokemon-ground {
-  background-image: url(imagenes_Data_Lovers/fondos/tipo_ground.jpg);
+  background-image: url(img/fondos/tipo_ground.jpg);
  }
 
  .pokemon-fairy {
-  background-image: url(imagenes_Data_Lovers/fondos/tipo_hada.png);
+  background-image: url(img/fondos/tipo_hada.png);
 }
 
 .pokemon-dragon {
-  background-image: url(imagenes_Data_Lovers/fondos/fondo_todos.jpg);
+  background-image: url(img/fondos/fondo_todos.jpg);
 }
 
 .pokemon-dark {
-  background-image: url(imagenes_Data_Lovers/fondos/tipo_dark.jpg);
+  background-image: url(img/fondos/tipo_dark.jpg);
 }
 
 .pokemon-normal {
-  background-image: url(imagenes_Data_Lovers/fondos/tipo_normal.jpeg);
+  background-image: url(img/fondos/tipo_normal.jpeg);
 }
 
 .pokemon-steel {
-  background-image: url(imagenes_Data_Lovers/fondos/tipo_steel.jpg);
+  background-image: url(img/fondos/tipo_steel.jpg);
 }
 
 .pokemon-fighting {
-  background-image: url(imagenes_Data_Lovers/fondos/tipo_lucha.jpg);
+  background-image: url(img/fondos/tipo_lucha.jpg);
 }
 
+#boton-tipos {
+  width: 30px;
+  height: 30px;
+  border-radius: 1px;
+}
 
 
 
