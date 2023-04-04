@@ -17,7 +17,7 @@ let getData = () => {
         bloque.classList.add("bloquePokemones");
         bloque.classList.add(`pokemon-${pokemon.type[0]}`);
         bloque.innerHTML = `<div class="bloquetransparente" id="tarjeta_"> <h2 class="letrastarjetas" > ${pokemon.name}
-        </h2> <img src="${pokemon.img}"> <div> <img id="boton-tipos" src=./img/iconos/${pokemon.type[0]}.png alt="tipo de pokemon"> 
+        </h2> <img src="${pokemon.img}"> <div> <img id="boton-tipos" src=./img/iconos/${pokemon.type[0]}.png>
         </div> <h2 class="letrastarjetas">${pokemon.num} </div>`;
         contenedor.appendChild(bloque);
       });
