@@ -23,6 +23,15 @@ header {
     font-size: x-large;
 }
 
+.botonesMenu{
+  background-color: #0C5259;
+    color: #D96725;
+    border-radius: 5px;
+    padding: 50px;
+    font-size: larger;
+    border: 0px;
+}
+
 #pokebola-img > img {
     margin-top: 20px;
     width: 500px;
@@ -57,11 +66,7 @@ footer {
   color: transparent;
 }
 
-#tarjeta > div {
-    border-radius: 10px;
-    box-shadow: 5px 10px 10px #888888;
-    text-align: center;
-}
+
 
 
 .bloquePokemones{
