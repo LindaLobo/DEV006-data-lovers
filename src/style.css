@@ -23,6 +23,26 @@ header {
     font-size: x-large;
 }
 
+.botonesMenu { 
+  background-color:  #0C5259 ;
+  color: #D96725;
+  border-radius: 5px;
+  border: 0;
+  height: 70px;
+  font-size: larger;
+}
+
+.botonesMenu:active {
+    background-color: #072f33;
+    cursor: pointer;
+  }
+
+  .botonesMenu:hover {
+    background-color: #072f33;
+    cursor: pointer;
+    
+  }
+
 
 #pokebola-img > img {
     margin-top: 20px;
@@ -67,7 +87,6 @@ footer {
   border-width: 1px;
   border-style: solid;
   box-shadow: 6px 20px 10px rgb(79, 79, 79);
-  
 }
 
 .bloquetransparente{
@@ -137,7 +156,8 @@ footer {
 }
 
 .pokemon-normal {
-  background-image: url(img/fondos/tipo_normal.jpeg);
+  background-image: url(img/fondos/tipo_nomal.png);
+  background-size: cover;
 }
 
 .pokemon-steel {
