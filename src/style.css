@@ -4,19 +4,24 @@ body{
 
 
 header {
-    background-color: #0C5259;
-    color: #D96725;
-    height: 150px;
+    background-image: url(img/fondos/fondo_headere.jpg);
+    background-size: cover;
+    color: black;
+    height: 230px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: xx-large;
+    font-size: inherit;
+  }
+
+h1 {
+  padding-left: 100px;
+  margin-top: 200px;
 }
 
 #menu {
     background-color: #0C5259;
     color: #D96725;
-    height: 150px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -28,14 +33,19 @@ header {
   color: #D96725;
   border-radius: 5px;
   border: 0;
+  height: 70px;
   font-size: larger;
 }
 
 .botonesMenu:active {
     background-color: #072f33;
-    color: white; 
-    padding: 30px;
-  }
+    cursor: pointer;
+}
+
+.botonesMenu:hover {
+  background-color: #072f33;
+  cursor: pointer;
+}
 
 
 #pokebola-img > img {
