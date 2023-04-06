@@ -81,14 +81,6 @@ footer {
   -webkit-background-clip: text;
   color: transparent;
 }
-
-#tarjeta > div {
-    border-radius: 10px;
-    box-shadow: 5px 10px 10px #888888;
-    text-align: center;
-}
-
-
 .bloquePokemones{
   display: inline-block;
   align-items: center; /* Alineación vertical */
@@ -169,6 +161,7 @@ footer {
 
 .pokemon-normal {
   background-image: url(img/fondos/tipo_nomal.png);
+  background-size: cover;
 }
 
 .pokemon-steel {
