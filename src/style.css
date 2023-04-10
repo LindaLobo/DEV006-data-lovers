@@ -7,7 +7,7 @@ header {
     background-image: url(img/fondos/fondo_headere.jpg);
     background-size: cover;
     color: black;
-    height: 230px;
+    height: 260px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,6 +176,10 @@ footer {
   width: 30px;
   height: 30px;
   border-radius: 1px;
+  }
+
+.fondoCaracteristicas{
+  background-color: aliceblue;
 }
 
 
