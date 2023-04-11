@@ -26,11 +26,13 @@ let getData = () => {
         const action = () => {
           document.getElementById("tarjeta2").style.display = "none";
           let pokemonDescripcion = document.getElementById("tarjeta3");
-          pokemonDescripcion.innerHTML = `<div class= "pokemon-${pokemon.type[0]}"><div> ${pokemon.name}</div> <div> <img src="${pokemon.img}"></div>
+          pokemonDescripcion.innerHTML = ` <div class="transparencia"><div class= "pokemon-${pokemon.type[0]} "> 
+          <h2 class="tittle">${pokemon.name} 
+          </h2> <div class="tarjeta3"><img src="${pokemon.img}">
           <div class="fondoCaracteristicas"><p>  ${pokemon.about}  <br>  type: ${pokemon.type} <br>
            city: ${pokemon.generation.name} <br> num:  ${pokemon.num} <br>
-           resistant: ${pokemon.resistant} <br> weaknesses: ${pokemon.weaknesses} </p></div>` ;
-         
+           resistant: ${pokemon.resistant} <br> weaknesses: ${pokemon.weaknesses} </p></div> </div> </div> </div>` ;
+          let botonPokemon
         };
         tarjeta.addEventListener("click", action);
       });

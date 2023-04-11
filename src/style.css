@@ -100,63 +100,81 @@ footer {
   padding: 20px;
 }
 
-
+.transparencia{
+  background-color: rgb(0, 0, 0, 0,5);
+  width: 100%;
+  height: 100%;
+}
 
 .pokemon-fire{
  background-image: url(img/fondos/fondo_fuego.jpg);
+ background-size: cover;
 }
 
 .pokemon-grass{
   background-image: url(img/fondos/fondo\ planta.jpg);
+  background-size: cover;
  }
  
 .pokemon-water{
   background-image: url(img/fondos/fondo\ agua.jpg);
+  background-size: cover;
 }
 
 .pokemon-bug{
   background-image: url(img/fondos/tipo_bicho.jpg);
+  background-size: cover;
 }
 
 .pokemon-poison{
   background-image: url(img/fondos/fondo_tipo_veneno.png);
+  background-size: cover;
 }
 
 
 .pokemon-electric{
-  background-image: url(img/fondos/fondo\ electricos.png)
+  background-image: url(img/fondos/fondo\ electricos.png);
+  background-size: cover;
  }
 
  .pokemon-rock{
-  background-image: url(img/fondos/tipo_roca.png)
+  background-image: url(img/fondos/tipo_roca.png);
+  background-size: cover;
  }
 
  .pokemon-ghost{
-  background-image: url(img/fondos/tipo_fantasmajpg.jpg)
+  background-image: url(img/fondos/tipo_fantasmajpg.jpg);
+  background-size: cover;
  }
 
  .pokemon-ice {
   background-image: url(img/fondos/tipo.icee.png);
+  background-size: cover;
  }
 
  .pokemon-psychic {
   background-image: url(img/fondos/tipo_psiquico.jpg);
+  background-size: cover;
  }
 
  .pokemon-ground {
   background-image: url(img/fondos/tipo_ground.jpg);
+  background-size: cover;
  }
 
  .pokemon-fairy {
   background-image: url(img/fondos/tipo_hada.png);
+  background-size: cover;
 }
 
 .pokemon-dragon {
   background-image: url(img/fondos/fondo_todos.jpg);
+  background-size: cover;
 }
 
 .pokemon-dark {
   background-image: url(img/fondos/tipo_dark.jpg);
+  background-size: cover;
 }
 
 .pokemon-normal {
@@ -166,10 +184,12 @@ footer {
 
 .pokemon-steel {
   background-image: url(img/fondos/tipo_steel.jpg);
+  background-size: cover;
 }
 
 .pokemon-fighting {
   background-image: url(img/fondos/tipo_lucha.jpg);
+  background-size: cover;
 }
 
 #boton-tipos {
@@ -178,9 +198,25 @@ footer {
   border-radius: 1px;
 }
 
+.tittle{
+  justify-content: center;
+  display: flex;
+  align-content: center;
+  padding-top: 50px;
+}
+.tarjeta3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
 .fondoCaracteristicas{
-  background-color: aliceblue;
+  background-color: #E8E3C5;
+  margin: 50px;
+  width: 300px;
+  height: auto;
+  padding: 20px;
 }
 
 
