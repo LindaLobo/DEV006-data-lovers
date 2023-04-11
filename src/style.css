@@ -37,6 +37,10 @@ h1 {
   font-size: larger;
 }
 
+.botonHouse{
+  width: 50px;
+}
+
 .botonesMenu:active {
     background-color: #072f33;
     cursor: pointer;
@@ -119,7 +123,7 @@ footer {
 }
 
 .pokemon-poison{
-  background-image: url(img/fondos/fondo_tipo_veneno.png);
+  background-image: url(img/fondos/tipo_poison.jpg);
 }
 
 
@@ -128,7 +132,7 @@ footer {
  }
 
  .pokemon-rock{
-  background-image: url(img/fondos/tipo_roca.png)
+  background-image: url(img/fondos/tipo_rock.jpeg)
  }
 
  .pokemon-ghost{
@@ -140,7 +144,7 @@ footer {
  }
 
  .pokemon-psychic {
-  background-image: url(img/fondos/tipo_psiquico.jpg);
+  background-image: url(img/fondos/tipo_psiquico.jpeg);
  }
 
  .pokemon-ground {
@@ -148,7 +152,7 @@ footer {
  }
 
  .pokemon-fairy {
-  background-image: url(img/fondos/tipo_hada.png);
+  background-image: url(img/fondos/tipo_hada.jpeg);
 }
 
 .pokemon-dragon {
@@ -182,10 +186,6 @@ footer {
   background-color: aliceblue;
 }
 
-
-.fondoCaracteristicas{
-  background-color: aliceblue;
-}
 
 
 
