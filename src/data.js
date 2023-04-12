@@ -1,23 +1,5 @@
 // import {getData} from './main.js';
 
-<<<<<<< HEAD
-
-export const anotherExample = () => {
-  return "OMG";
-};
-
-
-[]pokemones
-
-let pokemonesfiltrados = pokemones.filer(
-  (pokemon) => {
-  
-    if(pokemon.type == "texto"){
-      return pokemon
-    }
-  }
-)
-=======
 const res = await fetch("./data/pokemon/pokemon.json");
 export const data = await res.json();
 console.log(data);
@@ -45,4 +27,3 @@ export const myFuntion = (tipo) => {
 // export const anotherExample = () => {
 //   return "OMG";
 // };
->>>>>>> 553ce6d37a309c1327d4b2f77dc033a5f058e06e
