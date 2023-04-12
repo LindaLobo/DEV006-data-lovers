@@ -1,15 +1,29 @@
-// estas funciones son de ejemplo
+// import {getData} from './main.js';
 
-const ages = [32, 33, 12, 40];
+const res = await fetch("./data/pokemon/pokemon.json");
+export const data = await res.json();
+console.log(data);
 
-export const checkAge = (age) => {
-  return age > document.getElementById("ageToCheck").value;
+export let pokemonFiltrado = data.pokemon.filter(pokemon => pokemon.type[0] == "fire");
+  console.log(pokemonFiltrado)
+
+export const myFuntion = (tipo) => {
+  console.log(tipo)
 }
 
-export const myFunction = () => {
-  document.getElementById("demo").innerHTML = ages.filter(checkAge);
-}
 
-export const anotherExample = () => {
-  return "OMG";
-};
+// export function filtrar (pokemones, type) {
+//   return pokemones.filter(pokemon => pokemon.type == type)
+// }
+// console.log(filtrar())
+
+// export const filtrar = () => {
+//   let nuevo = data()
+//   let tipos = nuevo.filter(pokemon => pokemon.type)
+//   console.log(tipos)
+//   return tipos
+// }
+
+// export const anotherExample = () => {
+//   return "OMG";
+// };

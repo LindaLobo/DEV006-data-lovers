@@ -131,7 +131,7 @@ footer {
 }
 
 .pokemon-poison{
-  background-image: url(img/fondos/fondo_tipo_veneno.png);
+  background-image: url(img/fondos/tipo_poison.jpg);
   background-size: cover;
 }
 
@@ -142,7 +142,7 @@ footer {
  }
 
  .pokemon-rock{
-  background-image: url(img/fondos/tipo_roca.png);
+  background-image: url(img/fondos/tipo_rock.jpeg);
   background-size: cover;
  }
 
@@ -157,7 +157,7 @@ footer {
  }
 
  .pokemon-psychic {
-  background-image: url(img/fondos/tipo_psiquico.jpg);
+  background-image: url(img/fondos/tipo_psiquico.jpeg);
   background-size: cover;
  }
 
@@ -167,7 +167,7 @@ footer {
  }
 
  .pokemon-fairy {
-  background-image: url(img/fondos/tipo_hada.png);
+  background-image: url(img/fondos/tipo_hada.jpeg);
   background-size: cover;
 }
 
