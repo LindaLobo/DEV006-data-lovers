@@ -1,14 +1,15 @@
-// import { imageType } from './data.js';
+import { data, pokemonFiltrado, myFuntion } from "./data.js";
 // import data from './data/pokemon/pokemon.js';
 
-let getData = () => {
+export let getData = () => {
   fetch("./data/pokemon/pokemon.json")
     .then((res) => res.json())
     .then((res) => {
       let pokemones = res.pokemon;
       const contenedor = document.getElementById("tarjeta2");
+      contenedor.innerHTML = "";
       pokemones.forEach((pokemon) => {
-        //se crea un div por cada pokemon y se agrega una clase 
+        //se crea un div por cada pokemon y se agrega una clase
         let bloque = document.createElement("div");
         bloque.id = `tarjeta-${pokemon.name}`;
         // clase para dar estilo al div
@@ -24,15 +25,15 @@ let getData = () => {
 
         let tarjeta = document.getElementById(`tarjeta-${pokemon.name}`);
         const action = () => {
-          document.getElementById("tarjeta2").style.display = "none";
-          let pokemonDescripcion = document.getElementById("tarjeta3");
+          document.getElementById("tarjeta2").innerHTML = "";
+          let pokemonDescripcion = document.getElementById("tarjeta2");
           pokemonDescripcion.innerHTML = ` <div class="transparencia"><div class= "pokemon-${pokemon.type[0]} "> 
           <h2 class="tittle">${pokemon.name} 
           </h2> <div class="tarjeta3"><img src="${pokemon.img}">
           <div class="fondoCaracteristicas"><p>  ${pokemon.about}  <br>  type: ${pokemon.type} <br>
            city: ${pokemon.generation.name} <br> num:  ${pokemon.num} <br>
-           resistant: ${pokemon.resistant} <br> weaknesses: ${pokemon.weaknesses} </p></div> </div> </div> </div>` ;
-          let botonPokemon
+           resistant: ${pokemon.resistant} <br> weaknesses: ${pokemon.weaknesses} </p></div> </div> </div> </div>`;
+          let botonPokemon;
         };
         tarjeta.addEventListener("click", action);
       });
@@ -44,7 +45,15 @@ let botonPokemon = document.getElementById("pokemon");
 
 botonPokemon.addEventListener("click", () => {
   document.getElementById("pokebola-img").setAttribute("style", "display:none");
-  document
-    .getElementById("tarjeta1")
-    .setAttribute("style", "display:none").innerHTML = getData();
+//   document.getElementById("tarjeta1").innerHTML = `
+//     <div class="dropdown">
+//   <button class="dropbtn">Dropdown</button>
+//   <div class="dropdown-content">
+//     <a onclick="new_data()">Fire</a>
+//     <a id="boton-water">Water</a>
+//     <a id="boton-grass">Grass</a>
+//   </div>
+// </div>`;
+
+  getData();
 });
