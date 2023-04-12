@@ -1,4 +1,4 @@
-import { data, pokemonFiltrado, myFuntion } from "./data.js";
+import { data } from "./data.js";
 // import data from './data/pokemon/pokemon.js';
 
 export let getData = () => {
@@ -6,6 +6,17 @@ export let getData = () => {
     .then((res) => res.json())
     .then((res) => {
       let pokemones = res.pokemon;
+      document.getElementById("tarjeta1").innerHTML = `
+          <div class="filter">
+          <button class="filter-btn">Filter</button>
+          <div class="filter-content">
+          <ul> 
+          <button onclick="fire"> Fire </button>
+          <button> Water </button>
+          <button> Grass </button>
+          </ul>
+          </div>
+        </div>`;
       const contenedor = document.getElementById("tarjeta2");
       contenedor.innerHTML = "";
       pokemones.forEach((pokemon) => {
@@ -45,15 +56,10 @@ let botonPokemon = document.getElementById("pokemon");
 
 botonPokemon.addEventListener("click", () => {
   document.getElementById("pokebola-img").setAttribute("style", "display:none");
-//   document.getElementById("tarjeta1").innerHTML = `
-//     <div class="dropdown">
-//   <button class="dropbtn">Dropdown</button>
-//   <div class="dropdown-content">
-//     <a onclick="new_data()">Fire</a>
-//     <a id="boton-water">Water</a>
-//     <a id="boton-grass">Grass</a>
-//   </div>
-// </div>`;
+  document.getElementById("tarjeta1");
 
   getData();
+
 });
+
+
