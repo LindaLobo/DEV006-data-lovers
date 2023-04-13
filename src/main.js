@@ -1,22 +1,44 @@
-import { data } from "./data.js";
+import { hola } from "./data.js";
 // import data from './data/pokemon/pokemon.js';
+//import pokemones from './data/pokemon/pokemon.js';
 
 export let getData = () => {
   fetch("./data/pokemon/pokemon.json")
     .then((res) => res.json())
     .then((res) => {
       let pokemones = res.pokemon;
+     
       document.getElementById("tarjeta1").innerHTML = `
           <div class="filter">
           <button class="filter-btn">Filter</button>
           <div class="filter-content">
           <ul> 
-          <button onclick="fire"> Fire </button>
-          <button> Water </button>
-          <button> Grass </button>
+          <button id="fire"> grass </button>
+          <button > poison </button>
+          <button> fire </button>
+          <button> flying </button>
+          <button> water </button>
+          <button> bug </button>
+          <button> electric </button>
+          <button> groung </button>
+          <button> fighting </button>
+          <button> psychic  </button>
+          <button> rock  </button>
+          <button>  ice </button>
+          <button> ghost </button>
+          <button> normal </button>
+          <button> steel</button>
+          <button> dragon </button>
+          <button> fairy </button>
+          <button> dark </button>
           </ul>
           </div>
         </div>`;
+        let fire = document.getElementById("fire")
+        fire.onclick =  pokemonesfiltrados
+
+        
+
       const contenedor = document.getElementById("tarjeta2");
       contenedor.innerHTML = "";
       pokemones.forEach((pokemon) => {
@@ -53,6 +75,8 @@ export let getData = () => {
 };
 
 let botonPokemon = document.getElementById("pokemon");
+
+let pokemonesfiltrados = hola(pokemones)
 
 botonPokemon.addEventListener("click", () => {
   document.getElementById("pokebola-img").setAttribute("style", "display:none");

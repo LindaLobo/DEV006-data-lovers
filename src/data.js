@@ -1,6 +1,23 @@
-export let data = import ('./data/pokemon/pokemon.js')
-.then ((res) => res.json)
-.then ((res) => {console.log (data)})
+  //import pokemones from './data/pokemon/pokemon.js';
+  
+ 
+   export function hola(pokemones) {
+    //console.log(pokemones)
+  let pokemonFiltrado = pokemones.filter (
+    (pokemon) => {
+      if(pokemon.type == `fire`){
+      //console.log(pokemon)
+      return pokemon
+    }})
+ return pokemonFiltrado
+ //console.log(pokemonFiltrado)
+}
+
+
+
+
+// let data = import ('./data/pokemon/pokemon.js')
+
 
 // const res = await fetch("./data/pokemon/pokemon.json");
 // export const data = await res.json();
@@ -12,14 +29,6 @@ export let data = import ('./data/pokemon/pokemon.js')
 // const data = pokemon.json()
 // console.log(data)
 
-// let pokemonFiltrado = pokemones.filter (
-//   (pokemon) => {
-  
-//     if(pokemon.type == "fire"){
-//       return pokemonFiltrado
-//     }
-//   }
-// )
 
 // console.log(pokemonFiltrado)
 
