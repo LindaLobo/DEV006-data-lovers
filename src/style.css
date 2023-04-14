@@ -41,6 +41,7 @@ h1 {
   width: 50px;
 }
 
+
 .botonesMenu:active {
     background-color: #072f33;
     cursor: pointer;
@@ -223,35 +224,37 @@ footer {
   padding: 20px;
 }
 
+/* boton  */
 .filter-btn {
-  background-color: #4CAF50;
+  background-color: #072f33;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  width: 80px;
 }
 
+/* padre */
 .filter{
+  margin: 10px;
   position: relative;
   display: inline-block;
 }
-
+/*  lista   */
 .filter-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  width: 80px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+ 
 }
-
-
 .filter:hover .filter-content {
-  display: block;
+  display: grid;
 }
 
 .filter:hover .filter-btn {
-  background-color: #3e8e41;
+  background-color: #0a4449;
 }
 
