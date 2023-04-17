@@ -12,7 +12,6 @@ export let getData = () => {
           <div class="filter">
           <button class="filter-btn">Filter</button>
           <div class="filter-content">
-          <ul> 
           <button id="fire"> grass </button>
           <button > poison </button>
           <button> fire </button>
@@ -31,11 +30,11 @@ export let getData = () => {
           <button> dragon </button>
           <button> fairy </button>
           <button> dark </button>
-          </ul>
+
           </div>
         </div>`;
-        let fire = document.getElementById("fire")
-        fire.onclick =  pokemonesfiltrados
+        // let fire = document.getElementById("fire")
+        // fire.onclick =  pokemonesfiltrados
 
         
 
@@ -76,12 +75,10 @@ export let getData = () => {
 
 let botonPokemon = document.getElementById("pokemon");
 
-let pokemonesfiltrados = hola(pokemones)
+// let pokemonesfiltrados = hola(pokemones)
 
 botonPokemon.addEventListener("click", () => {
   document.getElementById("pokebola-img").setAttribute("style", "display:none");
-  document.getElementById("tarjeta1");
-
   getData();
 
 });
