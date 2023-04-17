@@ -1,60 +1,21 @@
   //import pokemones from './data/pokemon/pokemon.js';
+
+import { getData } from "./main.js"
+
   
  
-   export function hola(pokemones) {
-    //console.log(pokemones)
+   export function hola(pokemones, type) {
+    getData()
+    console.log(pokemones)
   let pokemonFiltrado = pokemones.filter (
     (pokemon) => {
-      if(pokemon.type == `fire`){
-      //console.log(pokemon)
+      if(pokemon.type.includes(type)){
       return pokemon
     }})
+    console.log({pokemonFiltrado})
+
+    localStorage.setItem("filtro", JSON.stringify(pokemonFiltrado))
+
  return pokemonFiltrado
  //console.log(pokemonFiltrado)
 }
-
-
-
-
-// let data = import ('./data/pokemon/pokemon.js')
-
-
-// const res = await fetch("./data/pokemon/pokemon.json");
-// export const data = await res.json();
-// console.log(data);
-
-
-
-// let pokemon = fetch("./data/pokemon/pokemon.json")
-// const data = pokemon.json()
-// console.log(data)
-
-
-// console.log(pokemonFiltrado)
-
-
-// let pokemonFiltrado = pokemones.filter(pokemon => pokemon.type[0] == "fire");
-//   console.log(pokemonFiltrado)
-
-// export function filtrar (pokemones, type) {
-//   return pokemones.filter(pokemon => pokemon.type == type)
-// }
-// console.log(filtrar())
-
-// export const filtrar = () => {
-//   let nuevo = data()
-//   let tipos = nuevo.filter(pokemon => pokemon.type)
-//   console.log(tipos)
-//   return tipos
-// }
-
-// const res = await fetch("./data/pokemon/pokemon.json");
-// export const data = await res.json();
-// console.log(data);
-
-// export let pokemonFiltrado = data.pokemon.filter(pokemon => pokemon.type[0] == "fire");
-//   console.log(pokemonFiltrado)
-
-// export const anotherExample = () => {
-//   return "OMG";
-// };
