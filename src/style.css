@@ -4,20 +4,17 @@ body{
 
 
 header {
-    background-image: url(img/fondos/fondo_headere.jpg);
+    /* background: url(img/fondos/fondo-pokemones.jpg); */
+    background-image:url("https://i.blogs.es/30680b/juegos-pokemon-moviles-android/1366_2000.jpg");
+    background-repeat: no-repeat;
+    background-position: center; /* Center the image */
     background-size: cover;
-    color: black;
-    height: 260px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: inherit;
+    height: 300px;
   }
 
-h1 {
-  padding-left: 100px;
-  margin-top: 200px;
-}
 
 #menu {
     background-color: #0C5259;
@@ -56,12 +53,10 @@ h1 {
 #pokebola-img > img {
     margin-top: 20px;
     width: 500px;
-    height: 500px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-inline: auto;
-    
 }
 
 footer {
@@ -86,15 +81,15 @@ footer {
   -webkit-background-clip: text;
   color: transparent;
 }
+
 .bloquePokemones{
-  display: inline-block;
+  display: flex;
   align-items: center; /* Alineación vertical */
   justify-content: center; /* Alineación horizontal */
   text-align: center; /* Alineación del texto */
   border-radius: 20px;
   margin: 10px;
   border-width: 1px;
-  border-style: solid;
   box-shadow: 6px 20px 10px rgb(79, 79, 79);
 }
 
@@ -102,7 +97,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.4);
   display: inline-block;
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .transparencia{
@@ -196,24 +191,33 @@ footer {
   background-image: url(img/fondos/tipo_lucha.jpg);
   background-size: cover;
 }
-
+/*botones de cada tipo*/
 #boton-tipos {
   width: 30px;
   height: 30px;
   border-radius: 1px;
 }
-
+/*titulo del detalle*/
 .tittle{
   justify-content: center;
   display: flex;
   align-content: center;
-  padding-top: 50px;
+  font-size: xxx-large;
+  color: white;
+  background-color: #0C5259;
 }
+
+/*imagen de la descripcion*/
 .tarjeta3{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.tarjeta3 > img {
+  width: 250px;
+  height: 250px;
 }
 
 .fondoCaracteristicas{
@@ -225,14 +229,27 @@ footer {
 }
 
 /* boton  */
-.filter-btn {
+.filter-btn, #btn-ordenar, #search {
+  display: flex;
+  justify-content: center;
   background-color: #072f33;
   color: white;
   padding: 16px;
   font-size: 16px;
-  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  width: 80px;
+  width: 70px;
+}
+
+.botonesTipo {
+  background: #F28F38;
+  color: black;
+  border-radius: 8px;
+}
+#botones-submenu {
+display: flex;
+align-items: center;
+justify-content: right;
 }
 
 /* padre */
@@ -245,7 +262,6 @@ footer {
 .filter-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
   width: 80px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
  
@@ -254,8 +270,136 @@ footer {
   display: grid;
 }
 
-
 .filter:hover .filter-btn {
   background-color: #0a4449;
 }
 
+/*ordenar*/
+#demo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+/*estilo de la tarjeta orden*/
+.letrastarjetasorden {
+  color: #0a4449;
+  display: flex;
+  justify-content: center;
+  background-color:#D96725;
+  border-radius: 10px;
+  font-size: medium;
+}
+
+/* estilo de la informacion*/
+.wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-parque, .imagen-comunidad {
+  cursor: pointer;
+  width: 500px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container-dos, .container-uno{
+  position: relative;
+  text-align: center;
+  color: #0a4449;
+  font-weight: bold;
+}
+
+.centered {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.imagen-parque:hover+.centered {
+  display: block;
+}
+
+.imagen-comunidad:hover+.centered {
+  display: block;
+}
+
+.container-dos:hover > img {
+  opacity: 0.5 !important;
+  transition: opacity 0.4s;
+}
+
+.container-uno:hover > img {
+  opacity: 0.4 !important;
+  transition: opacity 0.4s;
+}
+
+#myChart {
+  width: 0px;
+}
+
+
+
+/* Estilos para el campo de entrada (input) */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Estilos para el botón */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.btn:active {
+  color: #fff;
+  background-color: #0062cc;
+  border-color: #005cbf;
+}
+
+.btn.disabled, .btn:disabled {
+  opacity: 0.65;
+}
