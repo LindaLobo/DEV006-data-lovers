@@ -1,23 +1,27 @@
-import { example, anotherExample } from '../src/data.js';
+import { getData } from "../src/data.js";
 
-
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
-  });
-
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+describe("data de pokemones", () => {
+  it("deberia ser un array", () => {
+    expect(typeof getData()).toBe("pokemon");
   });
 });
 
+// describe('getData', () => {
+//   it('is a function', () => {
+//     expect(typeof getData).toBe('function');
+//   });
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
+//   it('returns true `pikachu`', () => {
+//     expect(getData("pikachu")).toBe(true);
+//   });
+// });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
+// describe('anotherExample', () => {
+//   it('is a function', () => {
+//     expect(typeof anotherExample).toBe('function');
+//   });
+
+//   it('returns `anotherExample`', () => {
+//     expect(anotherExample()).toBe('OMG');
+//   });
+// });

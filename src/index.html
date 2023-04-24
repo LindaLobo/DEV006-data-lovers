@@ -5,17 +5,19 @@
   <meta charset="utf-8">
   <link rel="shortcut icon" href="./img/iconos/charizar.png" type="image/x-icon">
   <title>Data Lovers</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
   <link rel="stylesheet" href="style.css" />
   <div id="root"></div>
 </head>
 
 <body>
   <header>
-    <!-- <h1 class="titulo">BIENVENIDO MAESTRO POKEMON</h1> -->
+
   </header>
   <main>
     <div id="menu">
-      <img class="botonHouse" src="./img/iconos/pokebola.png" alt="menu-house">
+      <img class="botonHouse" src="./img/iconos/pokebola.png" alt="menu-house" onclick="location.reload()">
       <button type="button" class="botonesMenu" id="pokemon">POKEMONES</button>
       <button type="button" class="botonesMenu" id="comparaciones">COMPARACIONES</button>
       <button type="button" class="botonesMenu" id="eventos">INFORMACIÓN</button>
@@ -27,12 +29,12 @@
 
     <div id="tarjeta1">
     </div>
-    
+
     <div id="tarjeta2">
     </div>
 
     <div id="tarjeta3">
-      
+
     </div>
 
   </main>
@@ -40,7 +42,6 @@
     <p> 2023 Laboratoria. All rights reserved </p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="main.js" type="module"></script>
 </body>
 

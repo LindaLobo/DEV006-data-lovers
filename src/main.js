@@ -1,7 +1,8 @@
+// import Chart  from "/node_modules/chart.js/dist/chart.js";
 import { getData, filtroPokemon, ordenar, obtenerPokemon } from "./data.js";
 
-export let dataPokemones = async () => {
-  let pokemones = await getData();
+export const dataPokemones = async () => {
+  const pokemones = await getData();
 
   // filter
   document.getElementById("tarjeta1").innerHTML = `  
@@ -39,16 +40,15 @@ export let dataPokemones = async () => {
           <p id="demo"></p>
         </div>`;
 
-        //BOTON DE ORDENAR
-  let botonOrdenar = document.querySelector("#btn-ordenar");
+  //BOTON DE ORDENAR
+  const botonOrdenar = document.querySelector("#btn-ordenar");
 
   botonOrdenar.addEventListener("click", async () => {
-    let organizar = await ordenar();
-    console.log(organizar);
+    const organizar = await ordenar();
+    // console.log(organizar);
     let text = "";
     organizar.forEach((value) => {
-      text +=
-        `<div class="bloquetransparente pokemon-${value.type[0]}" id="tarjeta-${value.name}" style="margin:10px;"> 
+      text += `<div class="bloquetransparente pokemon-${value.type[0]}" id="tarjeta-${value.name}" style="margin:10px;"> 
           <h2 class="letrastarjetasorden"> ${value.name}</h2> 
           <img src="${value.img}"> 
           <div>
@@ -61,7 +61,7 @@ export let dataPokemones = async () => {
   });
 
   //BOTON DE FILTER
-  let botonclikeado = document.querySelectorAll(".botonesTipo");
+  const botonclikeado = document.querySelectorAll(".botonesTipo");
 
   botonclikeado.forEach((boton) => {
     boton.addEventListener("click", (e) => {
@@ -71,13 +71,13 @@ export let dataPokemones = async () => {
 
   //CUERPO
   const dataPokemon = JSON.parse(localStorage.getItem("filtro")) || "";
-  const print = dataPokemon ? dataPokemon : pokemones;
+  const muestra = dataPokemon ? dataPokemon : pokemones;
   document.getElementById("tarjeta3").innerHTML = "";
   const contenedor = document.getElementById("tarjeta2");
   contenedor.innerHTML = "";
-  print.forEach((pokemon) => {
+  muestra.forEach((pokemon) => {
     //se crea un div por cada pokemon y se agrega una clase
-    let bloque = document.createElement("div");
+    const bloque = document.createElement("div");
     bloque.id = `tarjeta-${pokemon.name}`;
     // clase para dar estilo al div
     bloque.classList.add("bloquePokemones");
@@ -91,10 +91,10 @@ export let dataPokemones = async () => {
     contenedor.appendChild(bloque);
 
     // tarjeta dos descripcion de los pokemones
-    let tarjeta = document.getElementById(`tarjeta-${pokemon.name}`);
+    const tarjeta = document.getElementById(`tarjeta-${pokemon.name}`);
     const action = () => {
       document.getElementById("tarjeta2").innerHTML = "";
-      let pokemonDescripcion = document.getElementById("tarjeta2");
+      const pokemonDescripcion = document.getElementById("tarjeta2");
       pokemonDescripcion.innerHTML = ` <div class="transparencia "><div class= "pokemon-${pokemon.type[0]} "> 
           <h2 class="tittle">${pokemon.name} 
           </h2> <div class="tarjeta3"><img src="${pokemon.img}">
@@ -108,25 +108,23 @@ export let dataPokemones = async () => {
 
 //BOTON DE POKEMONES
 
-let botonPokemon = document.getElementById("pokemon");
+const botonPokemon = document.getElementById("pokemon"); 
 
-botonPokemon.addEventListener("click", () => {
+botonPokemon&&botonPokemon.addEventListener("click", () => {
   document.getElementById("pokebola-img").setAttribute("style", "display:none");
-  document.getElementById("tarjeta1");
   localStorage.removeItem("filtro");
   dataPokemones();
 });
 
-
 //COMPARACIONES
-let botonCuadro = document.getElementById("comparaciones");
+const botonCuadro = document.getElementById("comparaciones");
 
-botonCuadro.addEventListener("click", () => {
+botonCuadro&&botonCuadro.addEventListener("click", () => {
   document.getElementById("pokebola-img").setAttribute("style", "display:none");
   document.getElementById("tarjeta2").innerHTML = "";
   document.getElementById("tarjeta3").innerHTML = `
   <canvas id="myChart"></canvas>
-  `
+  `;
   document.getElementById("tarjeta1").innerHTML = `
   <div id="container">
         <h2>Obtener la información detallada del pokemon</h2>
@@ -143,26 +141,33 @@ botonCuadro.addEventListener("click", () => {
   `;
 
   //BUSQUEDA DE POKEMONES
-  let buscar = document.getElementById("search");
+  const buscar = document.getElementById("search");
 
-  buscar.addEventListener("click", async () => {
-    let nombre = document.getElementById("buscador").value;
-    console.log(nombre)
-    let detalle = await obtenerPokemon(nombre);
-    console.log(detalle.stats)
+  let myChart;
+  buscar&&buscar.addEventListener("click", async () => {
+    const nombre = document.getElementById("buscador").value;
+    // console.log(nombre);
+    const detalle = await obtenerPokemon(nombre);
+    // console.log(detalle.stats);
     // matriz de clave-valor
-    let statsPropiedades = []
-    let statsValores = []
-      for (const key in detalle.stats) {
-          statsPropiedades.push(key);
-          statsValores.push(detalle.stats[key])
-      }
-    console.log(statsPropiedades)
-    console.log(statsValores)
-    
+    const statsPropiedades = [];
+    const statsValores = [];
+    for (const key in detalle.stats) {
+      statsPropiedades.push(key);
+      statsValores.push(detalle.stats[key]);
+    }
+    // console.log(statsPropiedades);
+    // console.log(statsValores);
+
+    //Calculo Agregado:
+    const potencia = statsValores.reduce((acumulador, item) => {
+      return acumulador + parseInt(item);
+    }, 0);
+
     document.getElementById("recuadro").innerHTML = `
     <h3>Información Pokemon ${detalle.name}</h3>
     <h4>EGGS: ${detalle.egg}</h4>
+    <h4>POTENCIA de ${detalle.name}: ${potencia}</h4>
     <p>Leyenda:</p> 
     <p>
     base-attack = Ataque <br>
@@ -171,42 +176,46 @@ botonCuadro.addEventListener("click", () => {
     max-cp = Puntos Máximos de Combate <br>
     max-hp = Potencia de Combate Máxima
     </p>
-`
+`;
 
-console.log({statsPropiedades})
-console.log({statsValores})
+    // grafico
+    const ctx = document.getElementById("myChart");
+    ////OJOLEEEE
+    let Chart;
+    if (myChart) {
+      myChart.destroy();
+    }
 
-// grafico
-  const ctx = document.getElementById('myChart');
-
-    new Chart(ctx, {
-      type: 'bar',
+    myChart = new Chart(ctx, {
+      type: "bar",
       data: {
         labels: statsPropiedades,
-        datasets: [{
-          label: `Información Pokemon ${detalle.name}`,
-          data: statsValores,
-          borderWidth: 1
-        }]
+        datasets: [
+          {
+            label: `Información Pokemon ${detalle.name}`,
+            data: statsValores,
+            borderWidth: 1,
+          },
+        ],
       },
       options: {
         scales: {
           y: {
-            beginAtZero: true
-          }
-        }
-      }
+            beginAtZero: true,
+          },
+        },
+      },
     });
-});
+  });
 });
 
-//BOTONES DE EVENTOS 
-let botonEventos = document.getElementById("eventos");
+//BOTONES DE EVENTOS
+const botonEventos = document.getElementById("eventos");
 
-botonEventos.addEventListener("click", () => {
+botonEventos&&botonEventos.addEventListener("click", () => {
   document.getElementById("pokebola-img").setAttribute("style", "display:none");
-  document.getElementById("tarjeta2").innerHTML = ""
-  document.getElementById("tarjeta3").innerHTML = ""
+  document.getElementById("tarjeta2").innerHTML = "";
+  document.getElementById("tarjeta3").innerHTML = "";
   document.getElementById("tarjeta1").innerHTML = `
   <div class="wrapper">
     <div>
@@ -223,5 +232,5 @@ botonEventos.addEventListener("click", () => {
         creación que pretende ofrecer una experiencia Pokémon completamente inédita.</div>
       </div>
     </div>
-  </div>`
-})
+  </div>`;
+});
