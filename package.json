@@ -36,6 +36,7 @@
     "commit": "ffa75c8b2bede153844195479abeff01f3e34227"
   },
   "dependencies": {
+    "cross-fetch": "^3.1.5",
     "fetch": "^1.1.0",
     "node-fetch": "^3.3.1"
   }
