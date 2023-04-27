@@ -1,16 +1,9 @@
 import { dataPokemones } from "./main.js";
-// const https = require('https')
-// import fetch from 'node-fetch';
-const fetch = ("./data/pokemon/pokemon.json")
-import('node-fetch').then(({default: fetch}) => 
-fetch("./data/pokemon/pokemon.json"));
+import pokemon from "./data/pokemon/pokemon.js"
 
-// const url = "./data/pokemon/pokemon.json";
 
 export const getData = async () => {
-  const res = await fetch();
-  const response = await res.json();
-  return response.pokemon;
+  return pokemon.pokemon
 };
 
 export const filtroPokemon = async (pokemones, type) => {

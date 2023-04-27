@@ -59,15 +59,18 @@ header {
     margin-inline: auto;
 }
 
-footer {
+#footer {
     background-color: #0C5259;
     color: #E8E3C5;
     height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: xx-small;
+    font-size: x-small;
     margin-top: 20px;
+    bottom: 0%;
+    width: 100%;
+    position: fixed;
 }
 
 #tarjeta2 {

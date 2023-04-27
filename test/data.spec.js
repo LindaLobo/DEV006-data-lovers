@@ -1,27 +1,65 @@
-import { getData } from "../src/data.js";
+import { obtenerPokemon, getData, ordenar } from "../src/data.js";
+import pokemon from "../src/data/pokemon/pokemon.js";
 
-describe("data de pokemones", () => {
-  it("deberia ser un array", () => {
-    expect(typeof getData()).toBe("pokemon");
+describe("Pokemones", () => {
+  describe("Funcion para obtener todos los Pokemones", () => {
+    it("La respuesta deberia ser del tipo object", async () => {
+      const res = await getData();
+      expect(typeof res).toBe("object");
+    });
+    it("El nombre del pokemon deberia ser bulbasour", async () => {
+      const res = await getData();
+      expect(res[0].name).toBe("bulbasaur");
+    });
+    it("cantidad de pokemones en el array", async () => {
+      const res = await getData();
+      expect(res.length).toBe(251);
+    });
   });
+
+  describe("ordenado de pokemones", () => {
+    it("debería ser una función", async () => {
+      const res = await ordenar();
+      expect(typeof res).toBe("object");
+    });
+    it('al ordenarlos deberia mostrar un pokemon que comience por a"', async () => {
+      const orden = await ordenar(pokemon);
+      // console.log(orden)
+      expect(orden[0].name).toBe("abra");
+    });
+    it('deberia mostrar el ultimo pokemon que comience por z"', async () => {
+      const orden = await ordenar(pokemon);
+      // console.log(orden)
+      expect(orden[250].name).toBe("zubat");
+    });
+    it('deberia mostrar los tres primeros pokemones"', async () => {
+      const orden = await ordenar(pokemon);
+      const organizado = orden.slice(0, 3);
+      const newArray = organizado.map((pokemon) => pokemon.name);
+      // console.log(newArray)
+      expect(newArray).toBe[("abra", "aerodactyl", "aipom")];
+    });
+  });
+
+  describe("Funcion para obtener los Pokemones", () => {
+    it("debería mostrar el nombre del pokemon indicado", async () => {
+      const obtener = await obtenerPokemon("bulbasaur");
+      // console.log(obtener);
+      expect(obtener.name).toBe("bulbasaur");
+    });
+    it("debería mostrar el pokemon y su tipo", async () => {
+      const obtener = await obtenerPokemon("pikachu", "electric");
+      // console.log(obtener);
+      expect(obtener.name && obtener.type).toBe[{ name: "pikachu", type: ["electric"] }];
+    });
+  });
+
+  // describe("Funcion para filtrar los tipos de Pokemones", () => {
+  //   it("debería obtener el tipo del pokemon", async () => {
+  //     const filtro = await filtroPokemon("pikachu", "electric");
+  //     console.log(filtro);
+  //     // expect(filtro.name && filtro.type).toBe("cleffa","fairy");
+  //     // expect(filtro).toEqual([{ id: 1, name: 'pikachu', type: ['Electric'] }]);
+  //   });
+  // });
 });
-
-// describe('getData', () => {
-//   it('is a function', () => {
-//     expect(typeof getData).toBe('function');
-//   });
-
-//   it('returns true `pikachu`', () => {
-//     expect(getData("pikachu")).toBe(true);
-//   });
-// });
-
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
-
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });

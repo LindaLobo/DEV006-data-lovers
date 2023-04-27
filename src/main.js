@@ -30,7 +30,7 @@ export const dataPokemones = async () => {
                 <button class="botonesTipo" id="steel"> steel</button>
                 <button class="botonesTipo" id="dragon"> dragon </button>
                 <button class="botonesTipo" id="fairy"> fairy </button>
-                <button class="botonesTipo" id="fire"> dark </button>
+                <button class="botonesTipo" id="dark"> dark </button>
               </div>
             </div>
         </div>
@@ -108,24 +108,36 @@ export const dataPokemones = async () => {
 
 //BOTON DE POKEMONES
 
-const botonPokemon = document.getElementById("pokemon"); 
+const botonPokemon = document.getElementById("pokemon");
 
-botonPokemon&&botonPokemon.addEventListener("click", () => {
-  document.getElementById("pokebola-img").setAttribute("style", "display:none");
-  localStorage.removeItem("filtro");
-  dataPokemones();
-});
+botonPokemon &&
+  botonPokemon.addEventListener("click", () => {
+    document
+      .getElementById("pokebola-img")
+      .setAttribute("style", "display:none");
+    document.getElementById("tarjeta5").innerHTML = "";
+    document.getElementById("tarjeta4").innerHTML = "";
+    localStorage.removeItem("filtro");
+    dataPokemones();
+  });
 
 //COMPARACIONES
 const botonCuadro = document.getElementById("comparaciones");
 
-botonCuadro&&botonCuadro.addEventListener("click", () => {
-  document.getElementById("pokebola-img").setAttribute("style", "display:none");
-  document.getElementById("tarjeta2").innerHTML = "";
-  document.getElementById("tarjeta3").innerHTML = `
-  <canvas id="myChart"></canvas>
+botonCuadro &&
+  botonCuadro.addEventListener("click", () => {
+    document
+      .getElementById("pokebola-img")
+      .setAttribute("style", "display:none");
+    document.getElementById("tarjeta2").innerHTML = "";
+    document.getElementById("tarjeta1").innerHTML = "";
+    document.getElementById("tarjeta5").innerHTML = `
+    <div style="width:400px">
+        <canvas id="myChart"></canvas>
+    </div>  
+    
   `;
-  document.getElementById("tarjeta1").innerHTML = `
+    document.getElementById("tarjeta4").innerHTML = `
   <div id="container">
         <h2>Obtener la información detallada del pokemon</h2>
         <div style='display:flex; justify-content:center;'>
@@ -140,31 +152,32 @@ botonCuadro&&botonCuadro.addEventListener("click", () => {
     </div>
   `;
 
-  //BUSQUEDA DE POKEMONES
-  const buscar = document.getElementById("search");
+    //BUSQUEDA DE POKEMONES
+    const buscar = document.getElementById("search");
 
-  let myChart;
-  buscar&&buscar.addEventListener("click", async () => {
-    const nombre = document.getElementById("buscador").value;
-    // console.log(nombre);
-    const detalle = await obtenerPokemon(nombre);
-    // console.log(detalle.stats);
-    // matriz de clave-valor
-    const statsPropiedades = [];
-    const statsValores = [];
-    for (const key in detalle.stats) {
-      statsPropiedades.push(key);
-      statsValores.push(detalle.stats[key]);
-    }
-    // console.log(statsPropiedades);
-    // console.log(statsValores);
+    let myChart;
+    buscar &&
+      buscar.addEventListener("click", async () => {
+        const nombre = document.getElementById("buscador").value;
+        // console.log(nombre);
+        const detalle = await obtenerPokemon(nombre);
+        // console.log(detalle.stats);
+        // matriz de clave-valor
+        const statsPropiedades = [];
+        const statsValores = [];
+        for (const key in detalle.stats) {
+          statsPropiedades.push(key);
+          statsValores.push(detalle.stats[key]);
+        }
+        // console.log(statsPropiedades);
+        // console.log(statsValores);
 
-    //Calculo Agregado:
-    const potencia = statsValores.reduce((acumulador, item) => {
-      return acumulador + parseInt(item);
-    }, 0);
+        //Calculo Agregado:
+        const potencia = statsValores.reduce((acumulador, item) => {
+          return acumulador + parseInt(item);
+        }, 0);
 
-    document.getElementById("recuadro").innerHTML = `
+        document.getElementById("recuadro").innerHTML = `
     <h3>Información Pokemon ${detalle.name}</h3>
     <h4>EGGS: ${detalle.egg}</h4>
     <h4>POTENCIA de ${detalle.name}: ${potencia}</h4>
@@ -178,45 +191,57 @@ botonCuadro&&botonCuadro.addEventListener("click", () => {
     </p>
 `;
 
-    // grafico
-    const ctx = document.getElementById("myChart");
-    ////OJOLEEEE
-    let Chart;
-    if (myChart) {
-      myChart.destroy();
-    }
+        // grafico
+        const ctx = document.getElementById("myChart");
+        ////OJOLEEEE
+        // let Chart;
+        if (myChart) {
+          myChart.destroy();
+        }
 
-    myChart = new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: statsPropiedades,
-        datasets: [
-          {
-            label: `Información Pokemon ${detalle.name}`,
-            data: statsValores,
-            borderWidth: 1,
+        myChart = new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: statsPropiedades,
+            datasets: [
+              {
+                label: `Información Pokemon ${detalle.name}`,
+                data: statsValores,
+                backgroundColor: [
+                  "rgb(255, 99, 132)",
+                  "rgb(54, 162, 235)",
+                  "rgb(255, 205, 86)",
+                  "rgb(142, 68, 173)",
+                  "rgb(70, 173, 68)",
+                ],
+                borderWidth: 1,
+              },
+            ],
           },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
           },
-        },
-      },
-    });
+        });
+      });
   });
-});
 
 //BOTONES DE EVENTOS
 const botonEventos = document.getElementById("eventos");
 
-botonEventos&&botonEventos.addEventListener("click", () => {
-  document.getElementById("pokebola-img").setAttribute("style", "display:none");
-  document.getElementById("tarjeta2").innerHTML = "";
-  document.getElementById("tarjeta3").innerHTML = "";
-  document.getElementById("tarjeta1").innerHTML = `
+botonEventos &&
+  botonEventos.addEventListener("click", () => {
+    document
+      .getElementById("pokebola-img")
+      .setAttribute("style", "display:none");
+    document.getElementById("tarjeta2").innerHTML = "";
+    document.getElementById("tarjeta3").innerHTML = "";
+    document.getElementById("tarjeta1").innerHTML = "";
+    document.getElementById("tarjeta4").innerHTML = "";
+    document.getElementById("tarjeta5").innerHTML = `
   <div class="wrapper">
     <div>
       <div class="container-uno">
@@ -233,4 +258,4 @@ botonEventos&&botonEventos.addEventListener("click", () => {
       </div>
     </div>
   </div>`;
-});
+  });
