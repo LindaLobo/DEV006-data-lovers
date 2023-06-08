@@ -1,4 +1,3 @@
-// import Chart  from "/node_modules/chart.js/dist/chart.js";
 import { getData, filtroPokemon, ordenar, obtenerPokemon } from "./data.js";
 
 export const dataPokemones = async () => {

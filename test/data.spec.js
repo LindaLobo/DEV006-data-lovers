@@ -54,12 +54,4 @@ describe("Pokemones", () => {
     });
   });
 
-  // describe("Funcion para filtrar los tipos de Pokemones", () => {
-  //   it("debería obtener el tipo del pokemon", async () => {
-  //     const filtro = await filtroPokemon("pikachu", "electric");
-  //     console.log(filtro);
-  //     // expect(filtro.name && filtro.type).toBe("cleffa","fairy");
-  //     // expect(filtro).toEqual([{ id: 1, name: 'pikachu', type: ['Electric'] }]);
-  //   });
-  // });
 });
